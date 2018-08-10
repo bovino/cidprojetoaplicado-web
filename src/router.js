@@ -1,6 +1,5 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./views/Home.vue";
 
 Vue.use(Router);
 
@@ -9,7 +8,37 @@ export default new Router({
     {
       path: "/",
       name: "home",
-      component: Home
+      component: () => import("./views/Home.vue")
+    },
+    {
+      path: "/login",
+      name: "login",
+      component: () => import("./views/Login.vue")
+    },
+    {
+      path: "/dashboard",
+      name: "dashboard",
+      component: () => import("./views/Dashboard.vue")
+    },
+    {
+      path: "/alertas",
+      name: "ListarAlerta",
+      component: () => import("./views/ListarAlerta.vue")
+    },
+    {
+      path: "/cadastrarAlertas",
+      name: "CadastrarAlerta",
+      component: () => import("./views/CadastrarAlerta.vue")
+    },
+    {
+      path: "/logout",
+      name: "Logout",
+      component: () => import("./views/Logout.vue")
+    },
+    {
+      path: "/perfil",
+      name: "Perfil",
+      component: () => import("./views/Perfil.vue")
     },
     {
       path: "/about",

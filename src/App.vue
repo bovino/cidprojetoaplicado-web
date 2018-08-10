@@ -19,7 +19,7 @@
             <v-icon v-html="item.icon"></v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title v-text="item.title"></v-list-tile-title>
+            <v-list-tile-title v-on:click="link(item.link)" v-text="item.title"></v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
@@ -40,29 +40,10 @@
       </v-btn>
       <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn icon @click.stop="rightDrawer = !rightDrawer">
-        <v-icon>menu</v-icon>
-      </v-btn>
     </v-toolbar>
     <v-content>
       <router-view/>
     </v-content>
-    <v-navigation-drawer
-      temporary
-      :right="right"
-      v-model="rightDrawer"
-      fixed
-      app
-    >
-      <v-list>
-        <v-list-tile @click="right = !right">
-          <v-list-tile-action>
-            <v-icon>compare_arrows</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-title>Switch drawer (click me)</v-list-tile-title>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
     <v-footer :fixed="fixed" app>
       <span>&copy; 2017</span>
     </v-footer>
@@ -76,16 +57,34 @@ export default {
   data () {
     return {
       clipped: false,
-      drawer: true,
       fixed: false,
       items: [{
         icon: 'bubble_chart',
-        title: 'Inspire'
-      }],
+        title: 'Home',
+        link: '/#/'
+      }, {
+        icon: 'bubble_chart',
+        title: 'Alertas',
+        link: '/#/alertas'
+      },
+      {
+        icon: 'bubble_chart',
+        title: 'Logout',
+        link: '/#/logout'
+      },
+      {
+        icon: 'bubble_chart',
+        title: 'Perfil',
+        link: '/#/perfil'
+      },],
       miniVariant: false,
       right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js'
+      title: 'Projeto aplicado - Analisador de Contratos e licitações'
+    }
+  },
+  methods: {
+    link: function (newUrl) {
+      window.location = newUrl
     }
   }
 }
