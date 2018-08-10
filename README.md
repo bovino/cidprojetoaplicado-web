@@ -1,6 +1,5 @@
-# web
+# CID Projeto Aplicado - Módulo WEB - Project setup
 
-## CID Projeto Aplicado - Módulo WEB - Project setup
 ### Instalar Node e NPM na máquina, dai então executar via shell/cmd na raiz do projeto 
 ```
 npm install
