@@ -24,3 +24,5 @@ npm run lint
 ```
 npm run test:unit
 ```
+
+Este projeto front-end está linkado ao backend: https://github.com/bovino/cidprojetoaplicado
