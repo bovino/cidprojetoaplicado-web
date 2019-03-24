@@ -69,6 +69,11 @@ export default {
       },
       {
         icon: 'bubble_chart',
+        title: 'Graficos',
+        link: '/#/graficos'
+      },
+      {
+        icon: 'bubble_chart',
         title: 'Logout',
         link: '/#/logout'
       },
